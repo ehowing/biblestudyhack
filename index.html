@@ -25,9 +25,27 @@ function myFunction() {
 
   firebaseref.child("Text").set("Some Value");
 
-  $.getJSON('https://bible-api.com/john%203:16?translation=kjv', function(data) {
-        alert(data);
-  });
+	function getJSONP(url, success) {
+
+    var ud = '_' + +new Date,
+        script = document.createElement('script'),
+        head = document.getElementsByTagName('head')[0] 
+               || document.documentElement;
+
+    window[ud] = function(data) {
+        head.removeChild(script);
+        success && success(data);
+    };
+
+    script.src = url.replace('callback=?', 'callback=' + ud);
+    head.appendChild(script);
+
+}
+
+	getJSONP('https://bible-api.com/john%203:16?translation=kjv', function(data){
+    console.log(data);
+	});  
+
   //alert("I am an alert box!");
 }
 </script>
