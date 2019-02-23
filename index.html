@@ -27,6 +27,7 @@ function myFunction() {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', "https://bible-api.com/john%203:16?translation=kjv", true);
   xhr.send();
+  xhr.addEventListener("readystatechange", processRequest, false);
   xhr.onreadystatechange = processRequest;
 	function processRequest(e) {
     if (xhr.readyState == 4 && xhr.status == 200) {
