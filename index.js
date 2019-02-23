@@ -4,5 +4,6 @@ const Http = new XMLHttpRequest();
 	Http.send();
 	Http.onreadystatechange=(e)=>{
 	console.log(Http.responseText)
+	console.log("made it.")
 	}
 window.alert("okay");
