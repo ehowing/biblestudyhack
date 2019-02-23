@@ -5,6 +5,9 @@
 
 <script>
 function myFunction() {
+  var firebaseref = firebase.database().ref();
+
+  firebaseref.child("Text").set("Some Value");
   alert("I am an alert box!");
 }
 </script>
