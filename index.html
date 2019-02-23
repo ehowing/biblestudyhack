@@ -33,8 +33,7 @@ function myFunction() {
             // "Content-Type": "application/x-www-form-urlencoded",
         },
         redirect: "follow", // manual, *follow, error
-        referrer: "no-referrer", // no-referrer, *client
-        body: JSON.stringify(data), // body data type must match "Content-Type" header
+        referrer: "no-referrer" // no-referrer, *client
     })
     .then(response => response.json()); // parses response to JSON
   firebaseref.child("Text").set("Some Value");
