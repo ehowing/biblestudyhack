@@ -1,3 +1,4 @@
+console.log("made it.")
 const Http = new XMLHttpRequest();
 	const url='http://labs.bible.org/api/?passage=John+3:16-17';
 	Http.open("GET", url);
