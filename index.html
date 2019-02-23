@@ -24,15 +24,11 @@ function myFunction() {
   var firebaseref = firebase.database().ref();
 
   firebaseref.child("Text").set("Some Value");
-	var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() { 
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-            alert(xmlHttp.responseText);
-    }
-  xmlHttp.open("GET", "https://bible-api.com/john%203:16?translation=kjv", true); // true for asynchronous 
-  xmlHttp.send(null);
 
-  alert("I am an alert box!");
+  $.getJSON('https://bible-api.com/john%203:16?translation=kjv', function(data) {
+        alert(data);
+  });
+  //alert("I am an alert box!");
 }
 </script>
 
